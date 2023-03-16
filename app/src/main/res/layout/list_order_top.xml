@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/order_menu_name"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/order_menu_name_label"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:gravity="center_vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/order_menu_unit"
+        android:background="@drawable/text_background"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/order_menu_unit"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="@string/order_menu_unit_label"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toStartOf="@id/order_menu_price"
+        android:background="@drawable/text_background"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/order_menu_price"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:text="@string/order_menu_price_label"
+        android:textSize="15sp"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/text_background"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

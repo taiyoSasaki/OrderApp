@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuAddActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/menu_name_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/menu_name_label"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/menu_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/menu_name_label"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:text="@string/menu_add_hint" />
+
+    <TextView
+        android:id="@+id/menu_image_label"
+        android:text="@string/menu_image_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_name" />
+
+    <ImageView
+        android:id="@+id/menu_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_image_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/menu_price_label"
+        android:text="@string/menu_price_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_image" />
+
+    <TextView
+        android:id="@+id/menu_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/menu_price_label"/>
+
+    <TextView
+        android:id="@+id/menu_explain_label"
+        android:text="@string/menu_explain_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_price" />
+
+    <TextView
+        android:id="@+id/menu_explain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:textColor="@color/black"
+        android:text="揚げたてｱﾂｱﾂ!!"
+        app:layout_constraintTop_toBottomOf="@+id/menu_explain_label" />
+
+    <TextView
+        android:id="@+id/menu_unit_label"
+        android:text="@string/menu_unit_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_explain" />
+
+    <TextView
+        android:id="@+id/menu_unit"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:text="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/menu_unit_label" />
+
+    <Button
+        android:id="@+id/menu_unit_plus"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="+"
+        android:layout_marginStart="50dp"
+        app:layout_constraintStart_toEndOf="@+id/menu_unit"
+        app:layout_constraintTop_toTopOf="@+id/menu_unit"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_unit"/>
+
+    <Button
+        android:id="@+id/menu_unit_minus"
+        android:layout_width="50dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="-"
+        android:layout_marginEnd="50dp"
+        app:layout_constraintEnd_toStartOf="@+id/menu_unit"
+        app:layout_constraintTop_toTopOf="@+id/menu_unit"
+        app:layout_constraintBottom_toBottomOf="@+id/menu_unit"/>
+
+    <TextView
+        android:id="@+id/center"
+        android:layout_width="10dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/menu_unit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/menu_order"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/menu_order"
+        app:layout_constraintStart_toEndOf="@+id/center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/center" />
+
+    <Button
+        android:id="@+id/menu_return"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:text="@string/menu_return"
+        app:layout_constraintTop_toBottomOf="@+id/center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/center"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
