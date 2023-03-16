@@ -46,7 +46,9 @@ class LoginActivity : AppCompatActivity() {
                         saveName(data!!["StoreName"] as String)
                     }
 
-                    override fun onCancelled(firebaseError: DatabaseError) {}
+                    override fun onCancelled(firebaseError: DatabaseError) {
+
+                    }
                 })
 
                 // プログレスバーを非表示にする
@@ -79,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
             val password = passwordText.text.toString()
 
             if (email.length != 0 && password.length >= 6) {
-                login(email, password)
+                login(email, password, v)
             } else {
                 // エラーを表示する
                 Snackbar.make(v, getString(R.string.login_error_message), Snackbar.LENGTH_LONG).show()
@@ -88,7 +90,7 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
-    private fun login(email: String, password: String) {
+    private fun login(email: String, password: String, v: View) {
         //卓番号の入力
         // ダイアログ専用のレイアウトを読み込む
         val dialogLayout = LayoutInflater.from(this).inflate(R.layout.edit_text_dialog, null)
@@ -99,6 +101,10 @@ class LoginActivity : AppCompatActivity() {
             .setMessage(getString(R.string.table_number_message))
             .setView(dialogLayout)
             .setPositiveButton(getString(R.string.dialog_positive)) { _, _ ->
+                // キーボードが出てたら閉じる
+                val im = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+                im.hideSoftInputFromWindow(v.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+
                 //OKボタンを押したとき
                 val sp = PreferenceManager.getDefaultSharedPreferences(this)
                 val editor = sp.edit()
